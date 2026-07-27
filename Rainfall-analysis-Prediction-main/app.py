@@ -163,6 +163,8 @@ div[role="option"]:hover {
 # ================================
 # Load Models
 # ================================
+import os
+BASE_DIR=os.path.dirname(os.path.abspath(__file__))
 @st.cache_resource
 def load_models():
     lr = pickle.load(open('lr_model.pkl',      'rb'))
