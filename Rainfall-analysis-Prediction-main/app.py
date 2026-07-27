@@ -173,7 +173,7 @@ def load_models():
     ss = pickle.load(open( os.path.join(BASE_DIR, 'ss_scaler.pkl'),     'rb'))
     le = pickle.load(open( os.path.join(BASE_DIR, 'label_encoder.pkl'), 'rb'))
 
-    medians_df = pd.read_csv('region_medians.csv')
+    medians_df = pd.read_csv( os.path.join(BASE_DIR, 'region_medians.csv') ) 
 
     if 'SUBDIVISION' in medians_df.columns:
         medians_df = medians_df.set_index('SUBDIVISION') 
