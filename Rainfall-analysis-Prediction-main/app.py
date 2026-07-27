@@ -167,16 +167,16 @@ import os
 BASE_DIR=os.path.dirname(os.path.abspath(__file__))
 @st.cache_resource
 def load_models():
-    lr = pickle.load(open('lr_model.pkl',      'rb'))
-    l1 = pickle.load(open('lr_model1.pkl',     'rb'))
-    sc = pickle.load(open('sc_scaler.pkl',     'rb'))
-    ss = pickle.load(open('ss_scaler.pkl',     'rb'))
-    le = pickle.load(open('label_encoder.pkl', 'rb'))
+    lr = pickle.load(open( os.path.join(BASE_DIR, 'lr_model.pkl'),      'rb'))
+    l1 = pickle.load(open( os.path.join(BASE_DIR, 'lr_model1.pkl'),     'rb'))
+    sc = pickle.load(open( os.path.join(BASE_DIR, 'sc_scaler.pkl'),     'rb'))
+    ss = pickle.load(open( os.path.join(BASE_DIR, 'ss_scaler.pkl'),     'rb'))
+    le = pickle.load(open( os.path.join(BASE_DIR, 'label_encoder.pkl'), 'rb'))
 
     medians_df = pd.read_csv('region_medians.csv')
 
     if 'SUBDIVISION' in medians_df.columns:
-        medians_df = medians_df.set_index('SUBDIVISION')
+        medians_df = medians_df.set_index('SUBDIVISION') 
 
     medians_df.columns = medians_df.columns.str.strip()
     medians_df.index   = medians_df.index.str.strip()
