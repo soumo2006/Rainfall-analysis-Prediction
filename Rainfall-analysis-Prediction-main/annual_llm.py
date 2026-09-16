@@ -68,7 +68,7 @@ Important Constraints:
     
     ],
     temperature=0.7,
-    max_tokens=700
+    
 )
     return response.choices[0].message.content
 if __name__ == "__main__":
