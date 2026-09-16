@@ -55,7 +55,7 @@ Important Constraints:
 - Mention explicitly that this advice is based on ML predictions using historical IMD data and must be cross-verified with official IMD weather forecasts.
 """
     response=client.chat.completions.create(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-120b",
     messages=[
         {
             "role": "system",
